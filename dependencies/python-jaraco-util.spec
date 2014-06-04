@@ -12,6 +12,7 @@ Source0:        https://pypi.python.org/packages/source/j/jaraco.util/jaraco.uti
 
 BuildArch:      noarch
 BuildRequires:  python-devel
+BuildRequires:  python-setuptools
 
 %description
 General utility module that supplies commonly-used functionality

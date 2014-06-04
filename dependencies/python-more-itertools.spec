@@ -12,6 +12,7 @@ Source0:        https://pypi.python.org/packages/source/m/more-itertools/more-it
 
 BuildArch:      noarch
 BuildRequires:  python-devel
+BuildRequires:  python-setuptools
 
 %description
 A collection of several routines for working with iterables.
@@ -28,7 +29,7 @@ A collection of several routines for working with iterables.
 rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install --skip-build --root $RPM_BUILD_ROOT
 
- 
+
 %files
 %doc LICENSE README.rst
 # For noarch packages: sitelib
@@ -37,4 +38,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Wed Jun  4 2014 Steve Milner <stevem@gnulinux.net> - 2.2-1
-- Created initial spec 
+- Created initial spec
