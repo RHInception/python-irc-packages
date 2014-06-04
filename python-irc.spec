@@ -12,7 +12,7 @@ Source0:        https://pypi.python.org/packages/source/i/irc/irc-8.9.1.zip
 
 BuildArch:      noarch
 BuildRequires:  python-devel
-Requires:       python-more-itertools, python-jaraco-utils
+Requires:       python-more-itertools, python-jaraco-util
 
 
 %description
