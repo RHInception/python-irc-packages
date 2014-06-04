@@ -3,7 +3,7 @@
 
 Name:           python-jaraco-util
 Version:        10.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        General utility module that supplies commonly-used functionality
 
 License:        MIT
@@ -24,6 +24,8 @@ General utility module that supplies commonly-used functionality
 %build
 sed -i "s|#!python||" jaraco/lang/python.py
 sed -i "s|#!/usr/bin/env python||" jaraco/util/filesystem.py
+%{__sed} -i 's|use_hg_version=True|version="%{version}"|' setup.py
+%{__sed} -i "s|'hgtools',||" setup.py
 %{__python} setup.py build
 
 %install
@@ -39,5 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_bindir}/roll-dice
 
 %changelog
+* Wed Jun  4 2014 Steve Milner <stevem@gnulinux.net> - 10.0.2-2
+- Removed the hgtools requirement.
+
 * Wed Jun  4 2014 Steve Milner <stevem@gnulinux.net> - 10.0.2-1
 - Initial spec.
