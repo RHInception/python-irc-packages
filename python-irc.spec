@@ -3,7 +3,7 @@
 
 Name:           python-irc
 Version:        8.9.1
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        IRC protocol library for Python
 
 License:        MIT
@@ -12,6 +12,7 @@ Source0:        https://pypi.python.org/packages/source/i/irc/irc-8.9.1.zip
 
 BuildArch:      noarch
 BuildRequires:  python-devel
+BuildRequires:  python-setuptools
 Requires:       python-more-itertools, python-jaraco-util
 
 
@@ -34,13 +35,18 @@ CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build
 rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
 
- 
 %files
 %doc README.rst LICENSE COPYING
 # For noarch packages: sitelib
 %{python_sitelib}/*
-
+%exclude %{python_sitelib}/irc/tests
 
 %changelog
+* Wed Jun  4 2014 Tim Bielawa <tbielawa@redhat.com> - 8.9.1-3
+- Don't include unittests in production RPM
+
+* Wed Jun  4 2014 Tim Bielawa <tbielawa@redhat.com> - 8.9.1-2
+- Add buildrequires on python-setuptools
+
 * Wed Jun  4 2014 Steve Milner <stevem@gnulinux.net> - 8.9.1-1
-- Initial spec. 
+- Initial spec.
