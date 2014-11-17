@@ -2,13 +2,13 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:           python-irc
-Version:        8.9.1
-Release:        3%{?dist}
+Version:        11.0.1
+Release:        1%{?dist}
 Summary:        IRC protocol library for Python
 
 License:        MIT
 URL:            http://python-irclib.sourceforge.net
-Source0:        https://pypi.python.org/packages/source/i/irc/irc-8.9.1.zip
+Source0:        https://pypi.python.org/packages/source/i/irc/irc-%{version}.zip
 
 BuildArch:      noarch
 BuildRequires:  python-devel
@@ -42,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{python_sitelib}/irc/tests
 
 %changelog
+* Mon Nov 17 2014 Steve Milner <stevem@gnulinux.net> - 11.0.1-1
+- Big version bump.
+
 * Wed Jun  4 2014 Tim Bielawa <tbielawa@redhat.com> - 8.9.1-3
 - Don't include unittests in production RPM
 

@@ -2,13 +2,13 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:           python-jaraco-util
-Version:        10.0.2
-Release:        2%{?dist}
+Version:        10.6
+Release:        1%{?dist}
 Summary:        General utility module that supplies commonly-used functionality
 
 License:        MIT
 URL:            http://pypi.python.org/pypi/jaraco.util
-Source0:        https://pypi.python.org/packages/source/j/jaraco.util/jaraco.util-10.0.2.zip
+Source0:        https://pypi.python.org/packages/source/j/jaraco.util/jaraco.util-%{version}.zip
 
 BuildArch:      noarch
 BuildRequires:  python-devel
@@ -41,6 +41,9 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_bindir}/roll-dice
 
 %changelog
+* Mon Nov 17 2014 Steve Milner <stevem@gnulinux.net> - 10.6-1
+- Version bump.
+
 * Wed Jun  4 2014 Steve Milner <stevem@gnulinux.net> - 10.0.2-2
 - Removed the hgtools requirement.
 
