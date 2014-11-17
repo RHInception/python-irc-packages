@@ -8,7 +8,7 @@ Summary:        General utility module that supplies commonly-used functionality
 
 License:        MIT
 URL:            http://pypi.python.org/pypi/jaraco.util
-Source0:        https://pypi.python.org/packages/source/j/jaraco.util/jaraco.util-%{version}.zip
+Source0:        https://pypi.python.org/packages/source/j/jaraco.util/jaraco.util-10.6.zip
 
 BuildArch:      noarch
 BuildRequires:  python-devel

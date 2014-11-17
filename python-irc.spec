@@ -8,7 +8,7 @@ Summary:        IRC protocol library for Python
 
 License:        MIT
 URL:            http://python-irclib.sourceforge.net
-Source0:        https://pypi.python.org/packages/source/i/irc/irc-%{version}.zip
+Source0:        https://pypi.python.org/packages/source/i/irc/irc-11.0.1.zip
 
 BuildArch:      noarch
 BuildRequires:  python-devel
