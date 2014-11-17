@@ -3,7 +3,7 @@
 
 Name:           python-irc
 Version:        11.0.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        IRC protocol library for Python
 
 License:        MIT
@@ -13,7 +13,7 @@ Source0:        https://pypi.python.org/packages/source/i/irc/irc-11.0.1.zip
 BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
-Requires:       python-more-itertools, python-jaraco-util, python-importlibs
+Requires:       python-more-itertools, python-jaraco-util, python-importlib
 
 
 %description
@@ -44,6 +44,9 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{python_sitelib}/irc/tests
 
 %changelog
+* Mon Nov 17 2014 Ryan Cook <rcook@redhat.com> - 11.0.1-4
+- Python importlib
+
 * Mon Nov 17 2014 Steve Milner <stevem@gnulinux.net> - 11.0.1-3
 - Fixing more deps.
 
