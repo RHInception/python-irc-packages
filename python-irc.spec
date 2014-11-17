@@ -3,7 +3,7 @@
 
 Name:           python-irc
 Version:        11.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        IRC protocol library for Python
 
 License:        MIT
@@ -29,6 +29,7 @@ IRC protocol library for Python.
 %{__sed} -i "s|        'hgtools>=5',||" setup.py
 %{__sed} -i "s|        'six',||" setup.py
 %{__sed} -i "s|        'pytest',||" setup.py
+%{__sed} -i "s|        'pytest-runner',||" setup.py
 CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build
 
 
@@ -43,6 +44,9 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{python_sitelib}/irc/tests
 
 %changelog
+* Mon Nov 17 2014 Steve Milner <stevem@gnulinux.net> - 11.0.1-3
+- Fixing more deps.
+
 * Mon Nov 17 2014 Steve Milner <stevem@gnulinux.net> - 11.0.1-2
 - Fixing deps.
 
